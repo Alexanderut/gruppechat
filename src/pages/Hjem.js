@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { db } from '../firebase/firebase'
-import { collection, addDoc, query, limit, orderBy, onSnapshot } from 'firebase/firestore'
+import { collection, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore'
 import styled from 'styled-components'
 import { formatDistanceToNow } from 'date-fns';
 
