@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { db } from '../firebase/firebase'
-import { collection, addDoc, query, orderBy, onSnapshot } from 'firebase/firestore'
+import { collection, addDoc, query, orderBy, onSnapshot, limit } from 'firebase/firestore'
 import styled from 'styled-components'
 import { formatDistanceToNow } from 'date-fns';
 
@@ -17,7 +17,7 @@ const DEFAULTBILDE = "https://firebasestorage.googleapis.com/v0/b/gruppechat3101
 
 useEffect(()=>{
     const messageRef = collection(db, 'messages')
-    const q = query(messageRef, orderBy('timestamp', 'desc'))
+    const q = query(messageRef, orderBy('timestamp', 'desc'),limit(15))
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
         const messages = querySnapshot.docs.map(doc => {
