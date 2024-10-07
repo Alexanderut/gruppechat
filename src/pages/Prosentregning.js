@@ -102,6 +102,8 @@ export default function Prosentregning() {
     </div>
   );
 }
+
+
 // Styling
 const containerStyle = {
   maxWidth: '600px',
